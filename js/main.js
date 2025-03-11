@@ -9,7 +9,7 @@ gsap.from(items, {
   scrollTrigger: {
     trigger: ".data",
     scroller: 'body',
-    markers: true,
+    // markers: true,
     start: 'top 40%',
     stagger: {
       each: 0.30,
@@ -46,6 +46,8 @@ jQuery('.clientel').slick({
   speed: 300,
   slidesToShow: 3,
   slidesToScroll: 3,
+  dots: true,
+  arrows: false,
   responsive: [
     {
       breakpoint: 1024,
