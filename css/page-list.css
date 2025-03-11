@@ -1,7 +1,23 @@
-.hero.blog-hero {
-    padding-top: 197px;
+.blog-hero {
+    position: relative;
+    overflow: hidden;
+    /* padding-top: 325px;
+    padding-bottom: 105px; */
+    height: 600px;
 }
-
+.blog-hero:after {
+    content: '';
+    position: absolute;
+    transform: translate(50%, -50%);
+    width: 668px;
+    height: 668px;
+    border-radius: 100%;
+    top: 50%;
+    right: 0;
+    filter: blur(10px);
+    background: radial-gradient(circle, rgba(104, 92, 163, 1) 0%, rgba(0, 0, 26, 1) 72%);
+    backdrop-filter: blur(300px);
+  }
 .searchIcon {
     border: 1px solid #4B5563;
     border-right: 0;
