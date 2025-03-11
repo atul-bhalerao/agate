@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog List</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+  <!-- page css -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/page-list.css">
+
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Onest:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+
+<body>
+  <!-- header -->
+  <div class="container-fluid position-fixed navigation">
+    <div class="container">
+      <header class="d-flex flex-wrap justify-content-center">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+          <img src="images/Blue-Agate.png" class="img-fluid" alt="Blue-Agate">
+        </a>
+        <ul class="nav nav-default my-auto">
+          <li class="nav-item"><a href="#overview" class="nav-link active" aria-current="page">Overview</a></li>
+          <li class="nav-item"><a href="#WhatWeDo" class="nav-link">What We Do</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Why Choose Us</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Contact Us</a></li>
+        </ul>
+      </header>
+    </div>
+  </div>
+  <!-- header ends -->
+  <!-- hero Banner -->
+  <div class="text-center align-items-center d-flex flex-column justify-content-center hero blog-hero">
+    <!--style="height: 100vh;"-->
+    <div class="row">
+      <div class="col-lg-6 mx-auto">
+        <h1 class="display-5 fw-bold mb-4">
+          <span class="letters">Blogs</span>
+        </h1>
+        <p class="lead mb-4">Discover expert insights and cutting-edge trends in software development. Stay ahead with
+          our curated perspectives</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 mx-auto">
+        <form class="form-inline d-flex allSearch">
+          <div class="input-group input-group-merge mx-3">
+            <span class="input-group-text searchIcon"><i class="fas fa-search"></i></span>
+            <input class="form-control mr-sm-2 searchBox" type="search" placeholder="Search" aria-label="Search">
+          </div>
+          <button class="btn btn-primary blueButton my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- hero Banner ends -->
+  <!-- About -->
+  <div class="blogTabs" id="tabs">
+    <div class="container">
+      <div class="row row-cols-3 blog-cards text-left justify-content-evenly g-3">
+        <div class="col mb-4">
+          <div class="card mx-auto m-0">
+            <img class="card-img-top mb-3" src="images/bloginsent.png" alt="Card image cap">
+            <div class="card-body">
+              <a href="#" class="badge badge-secondary mb-3">Technology</a>
+              <h5 class="card-title mb-3">The Impact of Technology on the Workplace: How Technology is Changing</h5>
+              <a href="#" class="card-link blog-auther">Tracey Wilson</a>
+              <a href="#" class="card-link blog-date">August 20, 2022</a>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card mx-auto m-0">
+            <img class="card-img-top mb-3" src="images/bloginsent.png" alt="Card image cap">
+            <div class="card-body">
+              <a href="#" class="badge badge-secondary mb-3">Technology</a>
+              <h5 class="card-title mb-3">The Impact of Technology on the Workplace: How Technology is Changing</h5>
+              <a href="#" class="card-link blog-auther">Tracey Wilson</a>
+              <a href="#" class="card-link blog-date">August 20, 2022</a>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card mx-auto m-0">
+            <img class="card-img-top mb-3" src="images/bloginsent.png" alt="Card image cap">
+            <div class="card-body">
+              <a href="#" class="badge badge-secondary mb-3">Technology</a>
+              <h5 class="card-title mb-3">The Impact of Technology on the Workplace: How Technology is Changing</h5>
+              <a href="#" class="card-link blog-auther">Tracey Wilson</a>
+              <a href="#" class="card-link blog-date">August 20, 2022</a>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card mx-auto m-0">
+            <img class="card-img-top mb-3" src="images/bloginsent.png" alt="Card image cap">
+            <div class="card-body">
+              <a href="#" class="badge badge-secondary mb-3">Technology</a>
+              <h5 class="card-title mb-3">The Impact of Technology on the Workplace: How Technology is Changing</h5>
+              <a href="#" class="card-link blog-auther">Tracey Wilson</a>
+              <a href="#" class="card-link blog-date">August 20, 2022</a>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card mx-auto m-0">
+            <img class="card-img-top mb-3" src="images/bloginsent.png" alt="Card image cap">
+            <div class="card-body">
+              <a href="#" class="badge badge-secondary mb-3">Technology</a>
+              <h5 class="card-title mb-3">The Impact of Technology on the Workplace: How Technology is Changing</h5>
+              <a href="#" class="card-link blog-auther">Tracey Wilson</a>
+              <a href="#" class="card-link blog-date">August 20, 2022</a>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card mx-auto m-0">
+            <img class="card-img-top mb-3" src="images/bloginsent.png" alt="Card image cap">
+            <div class="card-body">
+              <a href="#" class="badge badge-secondary mb-3">Technology</a>
+              <h5 class="card-title mb-3">The Impact of Technology on the Workplace: How Technology is Changing</h5>
+              <a href="#" class="card-link blog-auther">Tracey Wilson</a>
+              <a href="#" class="card-link blog-date">August 20, 2022</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- About -->
+  <!-- pre footer  -->
+  <div class="preFooter mb-5">
+    <!-- Floating Circles -->
+    <div class="container">
+      <div class="row mx-0 my-5 preFooterWrap">
+        <div class="floating-circle purple-circle"></div>
+        <div class="floating-circle blue-circle"></div>
+        <div class="px-5 py-5  text-center preFooterContent">
+          <h1 class="display-5 fw-bold">Ready to Transform Your <span class="textBlue">Business</span>?</h1>
+          <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">Unlock your business's potential with tailored solutions. Connect with our experts
+              today!</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+              <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Let's Talk</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- pre footer ends -->
+  <!-- Footer -->
+  <footer class="mt-5 pt-5 pb-1 footer">
+    <div class="container footerWrap">
+      <div class="row">
+        <div class="col-md-4">
+          <a href="/"
+            class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none pb-3">
+            <img src="images/Blue-Agate.png" class="img-fluid footerLogo" alt="Blue-Agate">
+          </a>
+          <p class="footerInfo mb-4">Blue Agate delivers innovative IT solutions, including software development, AI
+            applications, and IT consulting, empowering businesses globally.</p>
+          <ul class="list-unstyled d-flex followUs">
+            <li>Follow us on:</li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#"> <img src="./images/icon-linkedin.svg"
+                  class="img-fluid" alt="linkedin"></a></li>
+          </ul>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-3">
+          <h5>About Us</h5>
+          <ul class="list-unstyled footerBackLink">
+            <li>Lorem ipsum dolor</li>
+            <li>Lorem ipsum dolor</li>
+            <li>Lorem ipsum dolor</li>
+          </ul>
+        </div>
+        <div class="col-md-3 footerAddress">
+          <h5>Blue Agate</h5>
+          <p class="pb-2">Lorem ipsum dolor
+            sit amet, consectetur adipiscing elit
+            sed do eiusmod</p>
+          <ul class="list-unstyled footerBackLink">
+            <li>O: 1234567890</li>
+            <li>F: 1234567890</li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-6">
+          <p class="copyright"> Copyright &copy; 2025 Blue Agate IT Solutions LLP. All rights reserved.</p>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+  <!-- /Footer -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+  <!-- Home page banner animation -->
+  <script type="module" src="/js/main.js"></script>
+</body>
+
+</html>
