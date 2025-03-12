@@ -1,29 +1,39 @@
+jQuery('.commitments').hover(function(){
 
-
-const items = document.querySelectorAll(".data");
-gsap.from(items, {
-  textContent: 0,
-  duration: 2,
-  ease: "power1.in",
-  snap: { textContent: 1 },
-  scrollTrigger: {
-    trigger: ".data",
-    scroller: 'body',
-    // markers: true,
-    start: 'top 40%',
-    stagger: {
-      each: 0.30,
-      onUpdate: function() {
-        this.targets()[0].innerHTML = numberWithCommas(Math.ceil(this.targets()[0].textContent));
-      },
-    }
-  }
+  const counters = document.querySelectorAll(".data");
+  const speed = 10;
+  
+  counters.forEach(function (counter) {
+    const animate = function () {
+      const value = +counter.getAttribute("akhi");
+      const data = +counter.innerText;
+      
+      const time = value / speed;
+      
+      if (data < value) {
+        var type = (counter.innerText = Math.ceil(data + time));
+        
+        setTimeout(animate, 200);
+        
+        console.log(Math.ceil(data + time).toLocaleString());
+        
+        // document.querySelectorAll(".data.emp").innerHTML = type.toLocaleString();
+      } else {
+        counter.innerText = value;
+      }
+    };
+    
+    animate();
+  });
 });
-
-
-function numberWithCommas(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
+// counter ends
+jQuery(".nav-link").click(function() {
+  var target = jQuery(this).attr('href');
+  jQuery('html, body').animate({
+    scrollTop: (jQuery(target).offset().top - 150)
+  });
+});
+// smooth scroll ends
 gsap.from(".missionImg",{
   width: "100%",
   top: '0',
