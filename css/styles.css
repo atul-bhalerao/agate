@@ -99,7 +99,11 @@ h6 {
 }
 
 .blueButton {
-  padding: 11.6px 16px 10.4px 16px;
+  height: 40px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center; /* Vertical center */
+  justify-content: center; /* Horizontal center */
 }
 
 .bi {

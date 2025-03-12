@@ -1,5 +1,13 @@
 /* View Blog */
- 
+.blogpage-hero {
+    position: relative;
+    overflow: hidden;
+    padding-top: 142px;
+    padding-bottom: 105px;
+    letter-spacing: 1px;
+    height: auto;
+    width: auto;
+}
 .blog-view-card .card {
     padding: 16px;
     background: none;
