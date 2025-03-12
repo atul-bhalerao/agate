@@ -1,26 +1,14 @@
 .blog-hero {
     position: relative;
     overflow: hidden;
-    /* padding-top: 325px;
-    padding-bottom: 105px; */
-    height: 600px;
+    padding-top: 222px;
+    padding-bottom: 48px;
+    height: 482px;
     letter-spacing: 1px;
 }
-
-.blog-hero:after {
-    content: '';
-    position: absolute;
-    transform: translate(50%, -50%);
-    width: 668px;
-    height: 668px;
-    border-radius: 100%;
-    top: 50%;
-    right: 0;
-    filter: blur(10px);
-    background: radial-gradient(circle, rgba(104, 92, 163, 1) 0%, rgba(0, 0, 26, 1) 72%);
-    backdrop-filter: blur(300px);
+.blogheroListing {
+    z-index: -1;
 }
-
 .search-container {
     width: 343px;
     position: relative;
@@ -80,13 +68,17 @@
 .filterList li a {
     color: #FFFFFF;
     text-decoration: none;
-
+    transition: 0.30s;
+    opacity: 0.8;
 }
 
 .filterList li:hover,
 .filterList li:active,
 .filterList li.active {
     border-bottom: 2.29px solid #E6E8EC;
+    font-weight: 600;
+    transition: 0.30s;
+    opacity: 1;
 }
 
 
@@ -109,7 +101,7 @@
 .blog-cards .card-title {
     font-family: "Raleway", sans-serif;
     font-weight: 600;
-    font-size: 15px;  /*24px */
+    font-size: 24px;
     line-height: 28px;
     letter-spacing: 0%;
     color: #fff;
@@ -128,7 +120,7 @@
 .blog-cards .badge-secondary {
     font-family: "Inter", serif;
     font-weight: 500;
-    font-size: 10px;  /*14px*/
+    font-size: 14px;  /*14px*/
     line-height: 20px;
     letter-spacing: 0%;
     color: #4B6BFB;
@@ -138,7 +130,7 @@
 .blog-cards .card-link {
     font-family: "Inter", serif;
     font-weight: 400;
-    font-size: 12px;  /*16px*/
+    font-size: 16px;
     line-height: 24px;
     letter-spacing: 0%;
     color: #97989F;
