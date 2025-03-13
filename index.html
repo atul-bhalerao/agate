@@ -142,7 +142,7 @@
             <h3>Legacy Modernization</h3>
             <div class="text">
               <p>Revitalize your outdated systems with our cutting-edge solutions, ensuring efficiency and modern functionality.</p>
-              <a href="#" class="btn btn-primary connect d-inline-flex align-items-center" type="button">
+              <a href="#"  data-bs-toggle="modal" data-bs-target="#casestudy" class="btn btn-primary connect d-inline-flex align-items-center" type="button">
                 Case Study
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
@@ -355,7 +355,7 @@
   </footer>
   <!-- /Footer -->
 
-  <!-- Modal -->
+<!--Contact Modal -->
 <div class="modal fade" id="contact" tabindex="-1" aria-labelledby="contact" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
@@ -369,7 +369,30 @@
     </div>
   </div>
 </div>
-   <!-- Modals ends -->
+<!-- Contact Modals ends -->
+ <!--Case Studies Modal -->
+<div class="modal fade" id="casestudy" tabindex="-1" aria-labelledby="casestudy" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-body">
+        <!-- Card -->
+        <div class="card border-0">
+          <img src="/images/case-study-img.png" class="card-img-top" alt="...">
+          <div class="card-body px-0">
+            <h5 class="card-title">Legacy Modernization</h5>
+            <p class="card-text">Revitalize your outdated systems with our cutting-edge solutions, ensuring efficiency and modern functionality.</p>
+          </div>
+          <div class="modal-footer border-0">
+            <button type="button" class="btn btn-default caseStudyClose" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary caseStudyCta">Save changes</button>
+          </div>
+        </div>
+         <!-- Card ends -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Case Studies Modals ends -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
     integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>

@@ -134,6 +134,12 @@ h6 {
   opacity: 1;
   transition: 0.3s;
 }
+.caseStudyClose {
+  width: 55%;
+}
+.caseStudyCta {
+  width: 40%;
+}
 
 /* About */
 .about {
