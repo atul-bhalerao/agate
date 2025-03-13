@@ -86,7 +86,7 @@
 }
 
 .blog-view-card .blog-img {
-    width: 992px;
+    /* width: 992px; */
     height: 359px;
     overflow: hidden;
     display: flex;

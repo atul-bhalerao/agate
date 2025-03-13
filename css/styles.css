@@ -322,6 +322,7 @@ h6 {
   /* backdrop-filter: blur(250px); */
   overflow: hidden;
   transition: 1s;
+  z-index: 1;
 }
 
 .boxWhy::after {
