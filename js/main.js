@@ -51,7 +51,6 @@ gsap.from(".missionImg",{
 // sliders
 
 jQuery('.clientel').slick({
-  dots: false,
   infinite: false,
   speed: 300,
   slidesToShow: 3,
@@ -69,18 +68,18 @@ jQuery('.clientel').slick({
       }
     },
     {
-      breakpoint: 600,
+      breakpoint: 768,
       settings: {
         slidesToShow: 2,
-        slidesToScroll: 2
+        slidesToScroll: 2,
       }
     },
     {
       breakpoint: 480,
       settings: {
         slidesToShow: 1,
-        slidesToScroll: 1
-      }
+        slidesToScroll: 1,
+        }
     }
     // You can unslick at a given breakpoint now by adding:
     // settings: "unslick"
@@ -88,4 +87,42 @@ jQuery('.clientel').slick({
   ]
 });
 
+// our strenth animation depend on window resize
+$(document).ready(function(){
+  function initSlick() {
+      if ($(window).width() <= 767.9) { 
+          if (!$('.box-slider').hasClass('slick-initialized')) {
+              $('.box-slider').slick({
+                  infinite: false,
+                  speed: 300,
+                  slidesToShow: 2,  // Show 1 item per slide
+                  slidesToScroll: 2,
+                  dots: true,
+                  arrows: false, // Hide arrows for mobile
+                  autoplay: false,
+                  responsive: [
+
+                  {
+                    breakpoint: 480,
+                    settings: {
+                      slidesToShow: 1,
+                      slidesToScroll: 1,
+                      }
+                  }
+
+                ]
+              });
+          }
+      } else {
+          if ($('.box-slider').hasClass('slick-initialized')) {
+              $('.box-slider').slick('unslick'); // Remove Slick for larger screens
+          }
+      }
+  }
+
+  initSlick(); // Run on page load
+  $(window).resize(function() {
+      initSlick(); // Re-run when resizing
+  });
+});
 // text animation
