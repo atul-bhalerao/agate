@@ -58,6 +58,14 @@ function initAnimations() {
 jQuery(document).ready(function () {
   initAnimations();
   runCounter();
+  // On initial load, if width < 992px, set correct values
+  if ($(window).width() < 992) {
+    $(".data").each(function () {
+      const counter = $(this);
+      const finalValue = counter.attr("akhi"); // Preserve final value
+      counter.text(finalValue);
+    });
+  }
 });
 
 // Re-check on window resize
