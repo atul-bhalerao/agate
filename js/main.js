@@ -1,52 +1,63 @@
-jQuery('.commitments').hover(function(){
-
-  const counters = document.querySelectorAll(".data");
-  const speed = 10;
-  
-  counters.forEach(function (counter) {
-    const animate = function () {
-      const value = +counter.getAttribute("akhi");
-      const data = +counter.innerText;
-      
-      const time = value / speed;
-      
-      if (data < value) {
-        var type = (counter.innerText = Math.ceil(data + time));
-        
-        setTimeout(animate, 200);
-        
-        console.log(Math.ceil(data + time).toLocaleString());
-        
-        // document.querySelectorAll(".data.emp").innerHTML = type.toLocaleString();
-      } else {
-        counter.innerText = value;
-      }
-    };
+function initAnimations() {
+  if (jQuery(window).width() >= 992) {
     
-    animate();
-  });
-});
-// counter ends
+    // Hover animation for .commitments
+    jQuery('.commitments').hover(function() {
+      const counters = document.querySelectorAll(".data");
+      const speed = 10;
+
+      counters.forEach(function(counter) {
+        const animate = function() {
+          const value = +counter.getAttribute("akhi");
+          const data = +counter.innerText;
+          const time = value / speed;
+
+          if (data < value) {
+            counter.innerText = Math.ceil(data + time);
+            setTimeout(animate, 200);
+          } else {
+            counter.innerText = value;
+          }
+        };
+        animate();
+      });
+    });
+
+    // GSAP Scroll Animation
+    gsap.from(".missionImg", {
+      width: "100%",
+      top: '0',
+      duration: 2,
+      scrollTrigger: {
+        trigger: ".missionImg",
+        scroller: 'body',
+        start: 'top 90%',
+        end: 'bottom 100%',
+        scrub: true,
+      }
+    });
+
+  }
+}
+
+// Smooth Scrolling (Runs on all screen sizes)
 jQuery(".nav-link").click(function() {
   var target = jQuery(this).attr('href');
   jQuery('html, body').animate({
     scrollTop: (jQuery(target).offset().top - 150)
   });
 });
-// smooth scroll ends
-gsap.from(".missionImg",{
-  width: "100%",
-  top: '0',
-  duration: 2,
-  scrollTrigger: {
-    trigger: ".missionImg",
-    scroller: 'body',
-    // markers: true,
-    start: 'top 90%',
-    end: 'bottom 100%',
-    scrub: true,
-  }
-})
+
+// Initialize animations on page load
+jQuery(document).ready(function() {
+  initAnimations();
+});
+
+// Re-check on window resize
+jQuery(window).resize(function() {
+  initAnimations();
+});
+
 
 // sliders
 
@@ -57,6 +68,7 @@ jQuery('.clientel').slick({
   slidesToScroll: 3,
   dots: true,
   arrows: false,
+  adaptiveHeight: true,
   responsive: [
     {
       breakpoint: 1024,
@@ -81,48 +93,82 @@ jQuery('.clientel').slick({
         slidesToScroll: 1,
         }
     }
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
   ]
 });
 
-// our strenth animation depend on window resize
-$(document).ready(function(){
-  function initSlick() {
-      if ($(window).width() <= 767.9) { 
-          if (!$('.box-slider').hasClass('slick-initialized')) {
-              $('.box-slider').slick({
-                  infinite: false,
-                  speed: 300,
-                  slidesToShow: 2,  // Show 1 item per slide
-                  slidesToScroll: 2,
-                  dots: true,
-                  arrows: false, // Hide arrows for mobile
-                  autoplay: false,
-                  responsive: [
+jQuery('.tab-flexboxWrap .flexbox-slider').slick({
+  infinite: false,
+  speed: 300,
+  slidesToShow: 2,
+  slidesToScroll: 2,
+  dots: true,
+  arrows: false,
+  adaptiveHeight: true,
+  responsive: [
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        }
+    }
+  ]
+});
 
-                  {
-                    breakpoint: 480,
-                    settings: {
-                      slidesToShow: 1,
-                      slidesToScroll: 1,
-                      }
-                  }
-
-                ]
-              });
+function initSlick() {
+  if (jQuery(window).width() < 992) {  
+    if (!jQuery('.box-slider').hasClass('slick-initialized')) {
+      jQuery('.box-slider').slick({
+        infinite: false,
+        speed: 300,
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        dots: true,
+        arrows: false,
+        adaptiveHeight: true,
+        responsive: [
+          {
+            breakpoint: 991, 
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            }
           }
-      } else {
-          if ($('.box-slider').hasClass('slick-initialized')) {
-              $('.box-slider').slick('unslick'); // Remove Slick for larger screens
-          }
-      }
+        ]
+      });
+    }
+  } else {  
+    if (jQuery('.box-slider').hasClass('slick-initialized')) {
+      jQuery('.box-slider').slick('unslick');
+    }
   }
+}
 
-  initSlick(); // Run on page load
-  $(window).resize(function() {
-      initSlick(); // Re-run when resizing
+// Run on page load
+jQuery(document).ready(function() {
+  initSlick();
+});
+
+// Run on window resize
+jQuery(window).resize(function() {
+  initSlick();
+});
+
+
+document.querySelectorAll(".hamburger").forEach((element) => {
+  element.addEventListener("click", (event) => {
+    element.classList.toggle("is-active");
   });
 });
+
+
+
+
 // text animation
