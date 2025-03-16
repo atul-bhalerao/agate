@@ -1,28 +1,35 @@
-function initAnimations() {
-  if (jQuery(window).width() >= 992) {
-    
-    // Hover animation for .commitments
-    jQuery('.commitments').hover(function() {
-      const counters = document.querySelectorAll(".data");
-      const speed = 10;
+function runCounter() {
+  $(".commitments").hover(function () {
+    if ($(window).width() >= 992) {
+      $(".data").each(function () {
+        const counter = $(this);
+        const value = parseInt(counter.attr("akhi"));
+        let current = parseInt(counter.text());
 
-      counters.forEach(function(counter) {
-        const animate = function() {
-          const value = +counter.getAttribute("akhi");
-          const data = +counter.innerText;
-          const time = value / speed;
+        if (current === value) return; // Prevent re-running if already counted
 
-          if (data < value) {
-            counter.innerText = Math.ceil(data + time);
+        const speed = 10;
+        const increment = value / speed;
+
+        const animate = function () {
+          let currentVal = parseInt(counter.text());
+          if (currentVal < value) {
+            counter.text(Math.ceil(currentVal + increment));
             setTimeout(animate, 200);
           } else {
-            counter.innerText = value;
+            counter.text(value); // Ensure exact value
           }
         };
+
         animate();
       });
-    });
+    }
+  });
+}
 
+
+function initAnimations() {
+  if (jQuery(window).width() >= 992) {
     // GSAP Scroll Animation
     gsap.from(".missionImg", {
       width: "100%",
@@ -37,27 +44,37 @@ function initAnimations() {
       }
     });
 
+    // Smooth Scrolling (Runs on all screen sizes)
+    jQuery(".nav-link").click(function () {
+      var target = jQuery(this).attr('href');
+      jQuery('html, body').animate({
+        scrollTop: (jQuery(target).offset().top - 150)
+      });
+    });
   }
 }
 
-// Smooth Scrolling (Runs on all screen sizes)
-jQuery(".nav-link").click(function() {
-  var target = jQuery(this).attr('href');
-  jQuery('html, body').animate({
-    scrollTop: (jQuery(target).offset().top - 150)
-  });
-});
-
 // Initialize animations on page load
-jQuery(document).ready(function() {
+jQuery(document).ready(function () {
   initAnimations();
+  runCounter();
 });
 
 // Re-check on window resize
-jQuery(window).resize(function() {
+jQuery(window).resize(function () {
   initAnimations();
 });
 
+// Preserve counted value after resizing to <992px
+$(window).on("resize", function () {
+  if ($(window).width() < 992) {
+    $(".data").each(function () {
+      const counter = $(this);
+      const finalValue = counter.attr("akhi"); // Preserve final value
+      counter.text(finalValue);
+    });
+  }
+});
 
 // sliders
 
@@ -69,8 +86,7 @@ jQuery('.clientel').slick({
   dots: true,
   arrows: false,
   adaptiveHeight: true,
-  responsive: [
-    {
+  responsive: [{
       breakpoint: 1024,
       settings: {
         slidesToShow: 3,
@@ -91,7 +107,7 @@ jQuery('.clientel').slick({
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
-        }
+      }
     }
   ]
 });
@@ -104,19 +120,17 @@ jQuery('.tab-flexboxWrap .flexbox-slider').slick({
   dots: true,
   arrows: false,
   adaptiveHeight: true,
-  responsive: [
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        }
+  responsive: [{
+    breakpoint: 480,
+    settings: {
+      slidesToShow: 1,
+      slidesToScroll: 1,
     }
-  ]
+  }]
 });
 
 function initSlick() {
-  if (jQuery(window).width() < 992) {  
+  if (jQuery(window).width() < 992) {
     if (!jQuery('.box-slider').hasClass('slick-initialized')) {
       jQuery('.box-slider').slick({
         infinite: false,
@@ -126,9 +140,8 @@ function initSlick() {
         dots: true,
         arrows: false,
         adaptiveHeight: true,
-        responsive: [
-          {
-            breakpoint: 991, 
+        responsive: [{
+            breakpoint: 991,
             settings: {
               slidesToShow: 2,
               slidesToScroll: 2,
@@ -144,7 +157,7 @@ function initSlick() {
         ]
       });
     }
-  } else {  
+  } else {
     if (jQuery('.box-slider').hasClass('slick-initialized')) {
       jQuery('.box-slider').slick('unslick');
     }
@@ -152,12 +165,12 @@ function initSlick() {
 }
 
 // Run on page load
-jQuery(document).ready(function() {
+jQuery(document).ready(function () {
   initSlick();
 });
 
 // Run on window resize
-jQuery(window).resize(function() {
+jQuery(window).resize(function () {
   initSlick();
 });
 
