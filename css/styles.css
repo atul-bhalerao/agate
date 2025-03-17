@@ -165,10 +165,20 @@ h6 {
 .hero {
   position: relative;
   overflow: hidden;
-  padding-top: 325px;
+  padding-top: 20%;
   padding-bottom: 105px;
-  height: 100vh;
+  /* height: 100vh; */
   z-index: 0;
+  min-height: 100vh;
+  /* Full height of the viewport */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-size: cover;
+  /* Adjust based on your design */
+  background-position: center;
 }
 
 .hero:after {
@@ -455,7 +465,8 @@ h6 {
 
 
 .box-slider .slick-slide,
-.clientel .slick-slide, .tab-flexboxWrap.flexbox-slider .slick-slide {
+.clientel .slick-slide,
+.tab-flexboxWrap.flexbox-slider .slick-slide {
   display: flex !important;
   /* Ensures flexbox behavior inside Slick */
   height: auto !important;
@@ -463,7 +474,8 @@ h6 {
 }
 
 .box-slider .slick-track,
-.clientel .slick-track, .tab-flexboxWrap.flexbox-slider .slick-track {
+.clientel .slick-track,
+.tab-flexboxWrap.flexbox-slider .slick-track {
   display: flex !important;
   /* Ensures flexbox stretches all items */
   align-items: stretch;
@@ -636,7 +648,8 @@ h6 {
 }
 
 .clientelWrap .slick-dots li button:before,
-.box-slider .slick-dots li button:before, .tab-flexboxWrap .flexbox-slider .slick-dots li button:before {
+.box-slider .slick-dots li button:before,
+.tab-flexboxWrap .flexbox-slider .slick-dots li button:before {
   background-color: #FFFFFF;
   border-radius: 10px;
   height: 15px;
@@ -648,7 +661,8 @@ h6 {
 }
 
 .clientelWrap .slick-dots li.slick-active button:before,
-.box-slider .slick-dots li.slick-active button:before, .tab-flexboxWrap .flexbox-slider .slick-dots li.slick-active button:before {
+.box-slider .slick-dots li.slick-active button:before,
+.tab-flexboxWrap .flexbox-slider .slick-dots li.slick-active button:before {
   background-color: #FFFFFF;
   border-radius: 10px;
   height: 15px;
@@ -660,7 +674,8 @@ h6 {
 
 /* the slides */
 .clientel .slick-slide,
-.box-slider .slick-slide, .tab-flexboxWrap .flexbox-slider .slick-slide  {
+.box-slider .slick-slide,
+.tab-flexboxWrap .flexbox-slider .slick-slide {
   margin: 0 8px;
 }
 
@@ -808,20 +823,26 @@ h6 {
   visibility: visible;
   margin: 0 12px;
 }
-.tab-flexboxWrap .flexbox-slider{
-  visibility: visible ;
+
+.tab-flexboxWrap .flexbox-slider {
+  visibility: visible;
   opacity: 1;
   height: 450px;
 }
+
 .tab-flexboxWrap .flexbox-slider .flexbox-slide {
   height: 400px;
   visibility: visible;
 }
+
 .tab-flexboxWrap .flexbox-slider:hover .flexbox-slide:hover {
   flex-shrink: unset;
   width: 100%;
 }
-.tab-flexboxWrap .flexbox-slider .flexbox-slide .text-block, .tab-flexboxWrap .flexbox-slider.flexbox-slider-1:hover .flexbox-slide:hover .text-block, .tab-flexboxWrap .flexbox-slider.flexbox-slider-1 .flexbox-slide .text-block{
+
+.tab-flexboxWrap .flexbox-slider .flexbox-slide .text-block,
+.tab-flexboxWrap .flexbox-slider.flexbox-slider-1:hover .flexbox-slide:hover .text-block,
+.tab-flexboxWrap .flexbox-slider.flexbox-slider-1 .flexbox-slide .text-block {
   visibility: visible;
   display: block;
   opacity: 1;
@@ -830,7 +851,7 @@ h6 {
 }
 
 
-.tab-flexboxWrap .flexbox-slider .flexbox-slide h2{
+.tab-flexboxWrap .flexbox-slider .flexbox-slide h2 {
   visibility: hidden;
   opacity: 0;
 
@@ -945,26 +966,24 @@ h6 {
 
 /* custom small size */
 @media (max-width:992px) {
-  .boxWhy::after {
-    width: -webkit-fill-available;
-    height: -webkit-fill-available;
-  }
 
-  /*.boxWhy:hover::after {
-    transition: 1s;
-    top: 0;
-    left: 0;
-  } */
   .container {
     max-width: 767px;
   }
 
-  /* .boxWhy:hover::after {
-    top: -295px;
-  } */
+  .custom-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 
   .navigation {
     background: var(--frame-surface-transparent-primary-30, #000000);
+  }
+
+  .hero {
+    padding-top: 25%;
   }
 
   .sm-container-height {
@@ -973,7 +992,34 @@ h6 {
     height: fit-content !important;
   }
 
-  .clientelWrap{
+  .clientelWrap {
     margin: 0;
   }
+
+  .boxWhy::after {
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+  }
+  .mission .title, .mission h2, .mission p{
+    margin-left: 0;
+    margin-bottom: 12px;
+  }
+  .mission p{
+    max-width: fit-content;
+  }
+  
+}
+@media (max-width: 768px) {
+  .custom-container {
+    max-width: 720px; /* Same as Bootstrap container */
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+@media (max-width:600px) {
+  .hero {
+    padding-top: 35%;
+  }
+
 }
