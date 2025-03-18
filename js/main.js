@@ -197,7 +197,75 @@ document.querySelectorAll(".hamburger").forEach((element) => {
   });
 });
 
+// blog filter for page-list
+jQuery(document).ready(function () {
+  jQuery(".filter-item").click(function (e) {
+    e.preventDefault();
 
+    let filter = jQuery(this).attr("data-filter");
 
+    jQuery(".filter-item").removeClass("active");
+    jQuery(this).addClass("active");
 
-// text animation
+    if (filter === "all") {
+      jQuery(".blog-item").fadeIn();
+    } else {
+      jQuery(".blog-item").hide();
+      jQuery('.blog-item[data-category="' + filter + '"]').fadeIn();
+    }
+  });
+});
+
+// pagination for page-list
+jQuery(document).ready(function () {
+  let itemsPerPage = jQuery(window).width() < 992 ? 2 : 9; // Adjust items per page based on screen size
+  let currentPage = 1;
+
+  function showPage(page) {
+    let start = (page - 1) * itemsPerPage;
+    let end = start + itemsPerPage;
+
+    jQuery(".blog-item").hide().slice(start, end).fadeIn();
+    jQuery(".pagination .page-number").removeClass("active");
+    jQuery('.pagination .page-number[data-page="' + page + '"]').addClass("active");
+  }
+
+  function createPagination() {
+    let totalItems = jQuery(".blog-item").length;
+    let totalPages = Math.ceil(totalItems / itemsPerPage);
+    let paginationHtml = "";
+
+    if (jQuery(window).width() < 992) { // Only create pagination for md & sm
+      for (let i = 1; i <= totalPages; i++) {
+        paginationHtml += `<li class="page-item page-number" data-page="${i}"><a href="#">${i}</a></li>`;
+      }
+    }
+
+    jQuery(".pagination").html(paginationHtml);
+    showPage(1);
+  }
+
+  createPagination();
+
+  jQuery(document).on("click", ".page-number", function (e) {
+    e.preventDefault();
+    let page = jQuery(this).attr("data-page");
+    showPage(page);
+  });
+
+  // Handle resizing
+  jQuery(window).resize(function () {
+    let newItemsPerPage = jQuery(window).width() < 992 ? 2 : 9;
+    if (newItemsPerPage !== itemsPerPage) {
+      itemsPerPage = newItemsPerPage;
+      createPagination();
+    }
+
+    // Show/hide pagination dynamically
+    if (jQuery(window).width() >= 992) {
+      jQuery(".pagination").hide();
+    } else {
+      jQuery(".pagination").show();
+    }
+  }).trigger("resize");
+});
