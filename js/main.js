@@ -106,8 +106,8 @@ jQuery('.clientel').slick({
     {
       breakpoint: 780,
       settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
+        slidesToShow: 1,
+        slidesToScroll: 1,
       }
     },
     {
@@ -129,12 +129,20 @@ jQuery('.tab-flexboxWrap .flexbox-slider').slick({
   arrows: false,
   adaptiveHeight: true,
   responsive: [{
+    breakpoint: 991,
+    settings: {
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    }
+  },
+  {
     breakpoint: 480,
     settings: {
       slidesToShow: 1,
       slidesToScroll: 1,
     }
-  }]
+  }
+]
 });
 
 function initSlick() {
