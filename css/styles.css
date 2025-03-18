@@ -1010,11 +1010,53 @@ h6 {
   
 }
 @media (max-width: 768px) {
+  .navbar-nav .nav-link {
+    padding: 30px 0 30px 20px;
+    border-bottom: 1px solid #ffffff52;
+    margin: 0;
+    font-size: 24px;
+    text-align: left !important;
+}
+.navbar-nav .nav-item,
+.navbar-nav .nav-link {
+  margin-left: 0px;
+}
+.navbar-collapse.show {
+  padding-bottom: 0;
+}
+  .hero {
+    min-height: 80vh;
+  }
+  .navbar-brand img {
+    padding-left: 20px;
+  }
+  .hamburger {
+    margin-right: 20px;
+  }
+  .slick-dots {
+    width: 95%;
+  }
+  .clientel {
+    padding: 0 0 30px;
+  }
   .custom-container {
     max-width: 720px; /* Same as Bootstrap container */
     margin: 0 auto;
     padding-left: 15px;
     padding-right: 15px;
+  }
+  .commitments .counter {
+    font-weight: 600;
+    font-size: 52px;
+    line-height: 80px;
+    letter-spacing: -10%;
+    color: rgba(123, 158, 250, 1);
+    font-family: "Inter", serif;
+    margin-bottom: 12px;
+  }
+  .sm-container-height {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
   }
 }
 @media (max-width:600px) {
