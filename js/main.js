@@ -136,4 +136,8 @@ jQuery(document).ready(function () {
       element.classList.toggle("is-active");
     });
   });
+
+  AOS.init({
+    offset: 300, // offset (in px) from the original trigger point
+  });
 });
