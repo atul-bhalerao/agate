@@ -1,3 +1,6 @@
+// ===============================
+// RUN COUNTER ON HOVER (for large screens)
+// ===============================
 function runCounter() {
   $(".commitments").hover(function () {
     if ($(window).width() >= 992) {
@@ -27,9 +30,9 @@ function runCounter() {
   });
 }
 
-
-function initAnimations() {
-  if (jQuery(window).width() >= 992) {
+// ===============================
+// ANIMATIONS (GSAP + Smooth Scrolling)
+// ===============================
     // GSAP Scroll Animation
     gsap.from(".missionImg", {
       width: "100%",
@@ -44,48 +47,49 @@ function initAnimations() {
       }
     });
 
-    // Smooth Scrolling (Runs on all screen sizes)
-    jQuery(".nav-link").click(function () {
-      var target = jQuery(this).attr('href');
-      jQuery('html, body').animate({
-        scrollTop: (jQuery(target).offset().top - 150)
-      });
-    });
-  }
-}
 
-// Initialize animations on page load
+// Smooth Scrolling (Runs on all screen sizes)
+jQuery(".nav-link").click(function() {
+  var target = jQuery(this).attr('href');
+  jQuery('html, body').animate({
+    scrollTop: (jQuery(target).offset().top - 150)
+  });
+});
+
+// ===============================
+// DOCUMENT READY
+// ===============================
 jQuery(document).ready(function () {
-  initAnimations();
+  // initAnimations();
   runCounter();
-  // On initial load, if width < 992px, set correct values
+
+  // Preserve counter value when screen width < 992px
   if ($(window).width() < 992) {
     $(".data").each(function () {
       const counter = $(this);
-      const finalValue = counter.attr("akhi"); // Preserve final value
-      counter.text(finalValue);
+      counter.text(counter.attr("akhi")); // Set final value
     });
   }
 });
 
-// Re-check on window resize
+// ===============================
+// WINDOW RESIZE HANDLING
+// ===============================
 jQuery(window).resize(function () {
-  initAnimations();
-});
+  // initAnimations();
 
-// Preserve counted value after resizing to <992px
-$(window).on("resize", function () {
+  // Preserve counted value after resizing to <992px
   if ($(window).width() < 992) {
     $(".data").each(function () {
       const counter = $(this);
-      const finalValue = counter.attr("akhi"); // Preserve final value
-      counter.text(finalValue);
+      counter.text(counter.attr("akhi")); // Set final value
     });
   }
 });
 
-// sliders
-
+// ===============================
+// SLICK SLIDERS INITIALIZATION
+// ===============================
 jQuery('.clientel').slick({
   infinite: false,
   speed: 300,
@@ -94,29 +98,10 @@ jQuery('.clientel').slick({
   dots: true,
   arrows: false,
   adaptiveHeight: true,
-  responsive: [{
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        infinite: true,
-        dots: true
-      }
-    },
-    {
-      breakpoint: 780,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-      }
-    },
-    {
-      breakpoint: 550,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      }
-    }
+  responsive: [
+    { breakpoint: 1024, settings: { slidesToShow: 3, slidesToScroll: 3, infinite: true, dots: true } },
+    { breakpoint: 780, settings: { slidesToShow: 1, slidesToScroll: 1 } },
+    { breakpoint: 550, settings: { slidesToShow: 1, slidesToScroll: 1 } }
   ]
 });
 
@@ -128,15 +113,15 @@ jQuery('.tab-flexboxWrap .flexbox-slider').slick({
   dots: true,
   arrows: false,
   adaptiveHeight: true,
-  responsive: [{
-    breakpoint: 480,
-    settings: {
-      slidesToShow: 1,
-      slidesToScroll: 1,
-    }
-  }]
+  responsive: [
+    { breakpoint: 991, settings: { slidesToShow: 1, slidesToScroll: 1 } },
+    { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1 } }
+  ]
 });
 
+// ===============================
+// RESPONSIVE SLICK SLIDER FOR .box-slider
+// ===============================
 function initSlick() {
   if (jQuery(window).width() < 992) {
     if (!jQuery('.box-slider').hasClass('slick-initialized')) {
@@ -148,20 +133,9 @@ function initSlick() {
         dots: true,
         arrows: false,
         adaptiveHeight: true,
-        responsive: [{
-            breakpoint: 991,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2,
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-            }
-          }
+        responsive: [
+          { breakpoint: 991, settings: { slidesToShow: 2, slidesToScroll: 2 } },
+          { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1 } }
         ]
       });
     }
@@ -172,92 +146,105 @@ function initSlick() {
   }
 }
 
-// Run on page load
 jQuery(document).ready(function () {
   initSlick();
 });
 
-// Run on window resize
 jQuery(window).resize(function () {
   initSlick();
 });
 
-
+// ===============================
+// HAMBURGER MENU TOGGLE
+// ===============================
 document.querySelectorAll(".hamburger").forEach((element) => {
-  element.addEventListener("click", (event) => {
+  element.addEventListener("click", () => {
     element.classList.toggle("is-active");
   });
 });
 
-// blog filter for page-list
 jQuery(document).ready(function () {
-  jQuery(".filter-item").click(function (e) {
-    e.preventDefault();
-
-    let filter = jQuery(this).attr("data-filter");
-
-    jQuery(".filter-item").removeClass("active");
-    jQuery(this).addClass("active");
-
-    if (filter === "all") {
-      jQuery(".blog-item").fadeIn();
-    } else {
-      jQuery(".blog-item").hide();
-      jQuery('.blog-item[data-category="' + filter + '"]').fadeIn();
-    }
-  });
-});
-
-// pagination for page-list
-jQuery(document).ready(function () {
-  let itemsPerPage = jQuery(window).width() < 992 ? 2 : 9; // Adjust items per page based on screen size
+  let itemsPerPage = jQuery(window).width() < 992 ? 2 : 9;
   let currentPage = 1;
+  let activeFilter = "all";
 
   function showPage(page) {
+    let filteredItems = activeFilter === "all" 
+      ? jQuery(".blog-item") 
+      : jQuery(`.blog-item[data-category="${activeFilter}"]`);
+
     let start = (page - 1) * itemsPerPage;
     let end = start + itemsPerPage;
 
-    jQuery(".blog-item").hide().slice(start, end).fadeIn();
+    jQuery(".blog-item").hide(); // Hide all items first
+    filteredItems.slice(start, end).fadeIn(); // Show only paginated items
+
     jQuery(".pagination .page-number").removeClass("active");
-    jQuery('.pagination .page-number[data-page="' + page + '"]').addClass("active");
+    jQuery(`.pagination .page-number[data-page="${page}"]`).addClass("active");
+
+    currentPage = page; // Update current page
   }
 
   function createPagination() {
-    let totalItems = jQuery(".blog-item").length;
-    let totalPages = Math.ceil(totalItems / itemsPerPage);
+    let filteredItems = activeFilter === "all" 
+      ? jQuery(".blog-item") 
+      : jQuery(`.blog-item[data-category="${activeFilter}"]`);
+
+    let totalPages = Math.ceil(filteredItems.length / itemsPerPage);
     let paginationHtml = "";
 
-    if (jQuery(window).width() < 992) { // Only create pagination for md & sm
+    jQuery(".pagination").empty(); // Clear existing pagination
+
+    if (totalPages > 1) { // Only show pagination if more than 1 page exists
       for (let i = 1; i <= totalPages; i++) {
-        paginationHtml += `<li class="page-item page-number" data-page="${i}"><a href="#">${i}</a></li>`;
+        paginationHtml += `<li class="page-item page-number" data-page="${i}">
+                             <a href="#" class="page-link">${i}</a>
+                           </li>`;
       }
     }
 
-    jQuery(".pagination").html(paginationHtml);
-    showPage(1);
+    jQuery(".pagination").append(paginationHtml);
+    showPage(1); // Reset to first page after pagination update
   }
 
-  createPagination();
+  // ==============================
+  // FILTER FUNCTIONALITY
+  // ==============================
+  jQuery(".filter-item").click(function (e) {
+    e.preventDefault();
 
+    activeFilter = jQuery(this).attr("data-filter"); // Update active filter
+    jQuery(".filter-item").removeClass("active");
+    jQuery(this).addClass("active");
+
+    if (activeFilter === "all") {
+      jQuery(".blog-item").show();
+    } else {
+      jQuery(".blog-item").hide();
+      jQuery(`.blog-item[data-category="${activeFilter}"]`).show();
+    }
+
+    createPagination(); // Recalculate pagination for filtered results
+  });
+
+  // ==============================
+  // PAGINATION FUNCTIONALITY
+  // ==============================
   jQuery(document).on("click", ".page-number", function (e) {
     e.preventDefault();
     let page = jQuery(this).attr("data-page");
     showPage(page);
   });
 
-  // Handle resizing
   jQuery(window).resize(function () {
     let newItemsPerPage = jQuery(window).width() < 992 ? 2 : 9;
     if (newItemsPerPage !== itemsPerPage) {
       itemsPerPage = newItemsPerPage;
-      createPagination();
+      createPagination(); // Recalculate pagination after resizing
     }
 
-    // Show/hide pagination dynamically
-    if (jQuery(window).width() >= 992) {
-      jQuery(".pagination").hide();
-    } else {
-      jQuery(".pagination").show();
-    }
+    jQuery(".pagination").toggle(jQuery(window).width() < 992); // Hide on large screens
   }).trigger("resize");
+
+  createPagination(); // Initialize pagination
 });
