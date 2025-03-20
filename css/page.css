@@ -1,11 +1,18 @@
 /* View Blog */
+#bloghero.hero{
+    padding-top: 2%;
+    padding-bottom: 0;
+}
+#bloghero.hero:after{
+    top: 17%;
+}
 .blogpage-hero {
     position: relative;
     overflow: hidden;
     padding-top: 142px;
-    padding-bottom: 105px;
+    padding-bottom: 72px;
     letter-spacing: 1px;
-    height: auto;
+    min-height: 100vh;
     width: auto;
 }
 .blogpage-hero.container {
@@ -15,19 +22,26 @@
     padding: 16px;
     background: none;
     z-index: 1;
+    text-align: start;
+    border: none;
+    padding-bottom: 0;
 }
+.blog-view-card .card .card-body{
+    padding-bottom: 0;
+}
+
 .blog-cards .card-title {
     font-weight: 600;
-    font-size: 24px;
+    font-size: clamp(14px, 2vw, 24px);
     line-height: 28px;
-    letter-spacing: 0%;
+    letter-spacing: normal;
     color: #FFFFFF;
 }
 .blog-cards .card-link {
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    letter-spacing: 0%;
+    letter-spacing: normal;
     color: #97989F;
     text-decoration: none;
 }
@@ -35,14 +49,14 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    letter-spacing: 0%;
+    letter-spacing: normal;
 
 }
 .blog-cards .badge-secondary {
     font-weight: 500;
     font-size: 14px;
     line-height: 20px;
-    letter-spacing: 0%;
+    letter-spacing: normal;
 }
 .blog-view-card .badge {
     border-radius: 6px;
@@ -59,7 +73,7 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
-    letter-spacing: 0%;
+    letter-spacing: normal;
     background-color: #4B6BFB;
     color: #fff;
     text-decoration: none;
@@ -69,7 +83,7 @@
 .blog-view-card .card-title {
     font-family: "Raleway", sans-serif;
     font-weight: 600;
-    font-size: 36px;
+    font-size: clamp(26px, 4vw, 36px);
     line-height: 40px;
     color: #fff;
 }
@@ -80,7 +94,7 @@
     font-size: 12px;
     /*16px*/
     line-height: 24px;
-    letter-spacing: 0%;
+    letter-spacing: normal;
     color: #97989F;
     text-decoration: none;
 }
@@ -93,6 +107,7 @@
     align-items: center;
     justify-content: center;
     background-color: #000;
+    border-radius: 6px;
 }
 
 .blog-view-card .blog-img img {
@@ -108,7 +123,7 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 32px;
-    letter-spacing: 0%;
+    letter-spacing: normal;
     color: #BABABF;
     margin-bottom: 32px;
     word-wrap: break-word;
@@ -131,9 +146,9 @@
 .blogExplore .titleMain {
     font-family: "Raleway", sans-serif;
     font-weight: 600;
-    font-size: 44px;
+    font-size: clamp(34px, 4vw, 44px);
     line-height: 52px;
-    letter-spacing: 0%;
+    letter-spacing: normal;
     text-align: left;
     color: #FFFFFF;
 }

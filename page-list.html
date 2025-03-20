@@ -10,11 +10,14 @@
 
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
   <!-- page css -->
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/page-list.css">
+  <link rel="stylesheet" href="css/page.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -68,7 +71,8 @@
   <!-- header ends -->
 
   <!-- hero Banner -->
-  <div class="text-center align-items-center d-flex flex-column justify-content-center hero blog-hero">
+  <div class="text-center align-items-center d-flex flex-column justify-content-center hero blog-hero"
+    id="bloglist-hero" data-aos="fade-up">
     <div class="custom-container">
       <div class="row">
         <div class="col-lg-6 mx-auto">
@@ -93,130 +97,135 @@
         </div>
       </div>
     </div>
+    <!-- blogFilters -->
+    <div class="blogFilters" id="filter" data-aos="fade-up">
+      <div class="container">
+        <!-- Blog Filters -->
+        <div class="row">
+          <ul class="list-unstyled d-sm-flex d-md-flex d-xl-flex filterList">
+            <li class="filter-item active" data-filter="all"><a href="#">View All</a></li>
+            <li class="filter-item" data-filter="featured"><a href="#">Featured</a></li>
+            <li class="filter-item" data-filter="technology"><a href="#">Technology</a></li>
+            <li class="filter-item" data-filter="ai"><a href="#">Artificial Intelligence</a></li>
+            <li class="filter-item" data-filter="cloud"><a href="#">Cloud Computing</a></li>
+            <li class="filter-item" data-filter="industry"><a href="#">Industry Reads</a></li>
+          </ul>
+        </div>
+
+        <!-- Blog Cards Grid -->
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 blog-cards text-left justify-content-evenly g-3">
+          <!-- Blog Card 1 -->
+          <div class="col mb-4 blog-item" data-category="technology">
+            <div class="card mx-auto m-0">
+              <img class="card-img-top mb-3" src="images/bloginsent.png" alt="Technology Blog">
+              <div class="card-body">
+                <a href="#" class="badge badge-secondary mb-3">Technology</a>
+                <h5 class="card-title mb-3">The Impact of Technology on the Workplace</h5>
+                <a href="#" class="card-link blog-auther">Tracey Wilson</a>
+                <a href="#" class="card-link blog-date">August 20, 2022</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Blog Card 2 -->
+          <div class="col mb-4 blog-item" data-category="cloud">
+            <div class="card mx-auto m-0">
+              <img class="card-img-top mb-3" src="images/bloginsent.png" alt="Cloud Computing Blog">
+              <div class="card-body">
+                <a href="#" class="badge badge-secondary mb-3">Cloud Computing</a>
+                <h5 class="card-title mb-3">How Cloud Computing is Changing the Industry</h5>
+                <a href="#" class="card-link blog-auther">John Doe</a>
+                <a href="#" class="card-link blog-date">September 5, 2023</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Blog Card 3 -->
+          <div class="col mb-4 blog-item" data-category="ai">
+            <div class="card mx-auto m-0">
+              <img class="card-img-top mb-3" src="images/bloginsent.png" alt="AI Blog">
+              <div class="card-body">
+                <a href="#" class="badge badge-secondary mb-3">Artificial Intelligence</a>
+                <h5 class="card-title mb-3">AI in Everyday Life: The Future of Automation</h5>
+                <a href="#" class="card-link blog-auther">Jane Smith</a>
+                <a href="#" class="card-link blog-date">July 12, 2023</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Blog Card 4 -->
+          <div class="col mb-4 blog-item" data-category="industry">
+            <div class="card mx-auto m-0">
+              <img class="card-img-top mb-3" src="images/bloginsent.png" alt="Industry Blog">
+              <div class="card-body">
+                <a href="#" class="badge badge-secondary mb-3">Industry Reads</a>
+                <h5 class="card-title mb-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                </h5>
+                <a href="#" class="card-link blog-auther">Jane Smith</a>
+                <a href="#" class="card-link blog-date">July 12, 2023</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Blog Card 5 -->
+          <div class="col mb-4 blog-item" data-category="cloud">
+            <div class="card mx-auto m-0">
+              <img class="card-img-top mb-3" src="images/bloginsent.png" alt="Cloud Blog">
+              <div class="card-body">
+                <a href="#" class="badge badge-secondary mb-3">Featured</a>
+                <h5 class="card-title mb-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                </h5>
+                <a href="#" class="card-link blog-auther">Jane Smith</a>
+                <a href="#" class="card-link blog-date">July 12, 2023</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Blog Card 1 -->
+          <div class="col mb-4 blog-item" data-category="technology">
+            <div class="card mx-auto m-0">
+              <img class="card-img-top mb-3" src="images/bloginsent.png" alt="Technology Blog">
+              <div class="card-body">
+                <a href="#" class="badge badge-secondary mb-3">Technology</a>
+                <h5 class="card-title mb-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                </h5>
+                <a href="#" class="card-link blog-auther">Jane Smith</a>
+                <a href="#" class="card-link blog-date">July 12, 2023</a>
+              </div>
+            </div>
+          </div>
+          <!-- More Cards Can Be Added Here -->
+
+        </div>
+        <!-- Blog Filters End-->
+      </div>
+    </div>
+    <!-- blogFilters End -->
   </div>
   <!-- hero Banner ends -->
 
-  <!-- About -->
-  <div class="blogFilters" id="filter">
-    <div class="container">
-      <!-- Blog Filters -->
-      <div class="row">
-        <ul class="list-unstyled d-sm-flex d-md-flex d-xl-flex filterList">
-          <li class="filter-item active" data-filter="all"><a href="#">View All</a></li>
-          <li class="filter-item" data-filter="featured"><a href="#">Featured</a></li>
-          <li class="filter-item" data-filter="technology"><a href="#">Technology</a></li>
-          <li class="filter-item" data-filter="ai"><a href="#">Artificial Intelligence</a></li>
-          <li class="filter-item" data-filter="cloud"><a href="#">Cloud Computing</a></li>
-          <li class="filter-item" data-filter="industry"><a href="#">Industry Reads</a></li>
-        </ul>
-      </div>
-
-      <!-- Blog Cards Grid -->
-      <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 blog-cards text-left justify-content-evenly g-3">
-        <!-- Blog Card 1 -->
-        <div class="col mb-4 blog-item" data-category="technology">
-          <div class="card mx-auto m-0" data-aos="fade-up">
-            <img class="card-img-top mb-3" src="images/bloginsent.png" alt="Technology Blog">
-            <div class="card-body">
-              <a href="#" class="badge badge-secondary mb-3">Technology</a>
-              <h5 class="card-title mb-3">The Impact of Technology on the Workplace</h5>
-              <a href="#" class="card-link blog-auther">Tracey Wilson</a>
-              <a href="#" class="card-link blog-date">August 20, 2022</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Blog Card 2 -->
-        <div class="col mb-4 blog-item" data-category="cloud">
-          <div class="card mx-auto m-0" data-aos="fade-up">
-            <img class="card-img-top mb-3" src="images/bloginsent.png" alt="Cloud Computing Blog">
-            <div class="card-body">
-              <a href="#" class="badge badge-secondary mb-3">Cloud Computing</a>
-              <h5 class="card-title mb-3">How Cloud Computing is Changing the Industry</h5>
-              <a href="#" class="card-link blog-auther">John Doe</a>
-              <a href="#" class="card-link blog-date">September 5, 2023</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Blog Card 3 -->
-        <div class="col mb-4 blog-item" data-category="ai">
-          <div class="card mx-auto m-0" data-aos="fade-up">
-            <img class="card-img-top mb-3" src="images/bloginsent.png" alt="AI Blog">
-            <div class="card-body">
-              <a href="#" class="badge badge-secondary mb-3">Artificial Intelligence</a>
-              <h5 class="card-title mb-3">AI in Everyday Life: The Future of Automation</h5>
-              <a href="#" class="card-link blog-auther">Jane Smith</a>
-              <a href="#" class="card-link blog-date">July 12, 2023</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Blog Card 4 -->
-        <div class="col mb-4 blog-item" data-category="industry">
-          <div class="card mx-auto m-0" data-aos="fade-up">
-            <img class="card-img-top mb-3" src="images/bloginsent.png" alt="Industry Blog">
-            <div class="card-body">
-              <a href="#" class="badge badge-secondary mb-3">Industry Reads</a>
-              <h5 class="card-title mb-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-              </h5>
-              <a href="#" class="card-link blog-auther">Jane Smith</a>
-              <a href="#" class="card-link blog-date">July 12, 2023</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Blog Card 5 -->
-        <div class="col mb-4 blog-item" data-category="industry">
-          <div class="card mx-auto m-0" data-aos="fade-up">
-            <img class="card-img-top mb-3" src="images/bloginsent.png" alt="Industry Blog">
-            <div class="card-body">
-              <a href="#" class="badge badge-secondary mb-3">Featured</a>
-              <h5 class="card-title mb-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-              </h5>
-              <a href="#" class="card-link blog-auther">Jane Smith</a>
-              <a href="#" class="card-link blog-date">July 12, 2023</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Blog Card 1 -->
-        <div class="col mb-4 blog-item" data-category="technology">
-          <div class="card mx-auto m-0" data-aos="fade-up">
-            <img class="card-img-top mb-3" src="images/bloginsent.png" alt="Technology Blog">
-            <div class="card-body">
-              <a href="#" class="badge badge-secondary mb-3">Technology</a>
-              <h5 class="card-title mb-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-              </h5>
-              <a href="#" class="card-link blog-auther">Jane Smith</a>
-              <a href="#" class="card-link blog-date">July 12, 2023</a>
-            </div>
-          </div>
-        </div>
-        <!-- More Cards Can Be Added Here -->
-
-      </div>
-      <!-- Blog Filters End-->
-
-    </div>
-  </div>
-  <!-- About End -->
-
   <!-- Pre footer  -->
-  <div class="preFooter mb-5">
+  <div class="preFooter sm-container-height mb-md-5" data-aos="fade-up">
+    <!-- Floating Circles -->
     <div class="container">
       <div class="row mx-0 my-5 preFooterWrap">
-        <!-- Floating Circles -->
         <div class="floating-circle purple-circle"></div>
         <div class="floating-circle blue-circle"></div>
-        <!-- /Floating Circles -->
         <div class="px-5 py-5  text-center preFooterContent">
           <h1 class="display-5 fw-bold">Ready to Transform Your <span class="textBlue">Business</span>?</h1>
-          <div class="col-lg-6 mx-auto">
+          <div class="col-lg-7 mx-auto">
             <p class="lead mb-4">Unlock your business's potential with tailored solutions. Connect with our experts
               today!</p>
-            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-              <button type="button" class="btn btn-primary btn-lg px-4 gap-3 blueButton">Let's Talk</button>
+            <div class="d-block gap-2 d-sm-flex justify-content-sm-center">
+              <a href="#" data-bs-toggle="modal" data-bs-target="#contact"
+                class="btn connect btn-primary d-inline-flex align-items-center" type="button">
+                Let's Talk
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                  class="bi bi-arrow-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                </svg>
+              </a>
             </div>
           </div>
         </div>
@@ -271,7 +280,50 @@
       </div>
     </div>
   </footer>
-  <!-- /Footer -->
+  <!-- /Footer ends -->
+
+  <!--Contact Modal -->
+  <div class="modal fade" id="contact" tabindex="-1" aria-labelledby="contact" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header border-0">
+          <h1 class="modal-title fs-5" id="contact">Get in Touch</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Contact Modals ends -->
+
+  <!--Case Studies Modal -->
+  <div class="modal fade" id="casestudy" tabindex="-1" aria-labelledby="casestudy" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-body">
+          <!-- Card -->
+          <div class="card border-0">
+            <img src="/images/case-study-img.png" class="card-img-top" alt="...">
+            <div class="card-body px-0">
+              <h5 class="card-title">Legacy Modernization</h5>
+              <p class="card-text">Revitalize your outdated systems with our cutting-edge solutions, ensuring efficiency
+                and modern functionality.</p>
+            </div>
+            <div class="modal-footer border-0">
+              <button type="button" class="btn btn-default caseStudyClose" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary caseStudyCta">Save changes</button>
+            </div>
+          </div>
+          <!-- Card ends -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Case Studies Modals ends -->
+
+  <!--Scripts-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
     integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -290,9 +342,12 @@
 
   <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+    integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
   <!-- Home page banner animation -->
-  <script type="module" src="js/main.js"></script>
+  <script type="module" src="/js/main.js"></script>
   <script>
 
   </script>
