@@ -42,7 +42,7 @@ h6 {
 .navbar-nav .nav-item a,
 .navbar-nav .nav-link {
   font-family: "Onest", sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 16px;
   line-height: 110.00000000000001%;
   letter-spacing: -4%;
@@ -140,9 +140,6 @@ h6 {
   transform: translateY(-50%) rotateZ(135deg);
 }
 
-
-
-
 .textBlue {
   color: #7B9EFA !important;
 }
@@ -199,7 +196,7 @@ h6 {
 .hero p.lead {
   letter-spacing: 1px;
   font-weight: 400;
-  font-size: 24px;
+  font-size: clamp(14px, 3vw, 24px);
   line-height: 32px;
   text-align: center;
 }
@@ -310,7 +307,6 @@ h6 {
   font-style: normal;
   font-weight: 700;
   color: #00001A;
-
   font-size: 36px;
   line-height: 44px;
   letter-spacing: 0%;
@@ -434,8 +430,6 @@ h6 {
   border: 1px solid #FFFFFF4D;
   border-radius: 30px;
   background-color: transparent;
-  /* background: linear-gradient(to right, #303146, #342769); */
-  /* backdrop-filter: blur(250px); */
   overflow: hidden;
   transition: 1s;
   z-index: 1;
@@ -584,9 +578,6 @@ h6 {
   position: relative;
   z-index: 1;
 }
-
-
-
 
 .clientel .clientWrap .company {
   font-weight: 300;
@@ -801,7 +792,7 @@ h6 {
 
 /* accordian */
 
-/*slide styles !!!YOU NEED THEM */
+/*slide styles */
 .flexbox-slider {
   display: flex;
   width: 100%;
@@ -903,7 +894,6 @@ h6 {
   max-width: 400px;
   padding: 20px;
   border-radius: 5px;
-  /* background-color: rgba(0, 0, 0, 0.6); */
   color: #fff;
   z-index: 4;
   visibility: hidden;
@@ -983,7 +973,11 @@ h6 {
   }
 
   .hero {
-    padding-top: 25%;
+    padding-top: 25% !important;
+  }
+  #bloghero.hero {
+    padding-top: 2% !important;
+    padding-bottom: 0;
   }
 
   .sm-container-height {
@@ -1061,7 +1055,11 @@ h6 {
 }
 @media (max-width:600px) {
   .hero {
-    padding-top: 35%;
+    padding-top: 35% !important;
+  }
+  #bloghero.hero {
+    padding-top: 2% !important;
+    padding-bottom: 0;
   }
 
 }
